@@ -40,7 +40,8 @@ with open(args.xml) as fp:
             title = description.title
             if args.ncbiTitles:
                 title = title[title.index(' '):title.find(',')]
-            titles[title] += 1
+            for word in title.lower().split():
+                titles[word] += 1
 
 wordCloud = WordCloud(width=900, height=600).generate_from_frequencies(
     titles.items())

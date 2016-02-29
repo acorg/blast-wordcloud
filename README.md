@@ -9,7 +9,7 @@ First, run `blast` and use `-outfmt 5` on the command line to get XML
 output. Let's suppose that's in a file called `blast-output.xml`. Then:
 
 ```sh
-$ blast-wordcloud.py --in blast-output.xml --out word-cloud.png
+$ blast-wordcloud.py --xml blast-output.xml --out word-cloud.png
 ```
 
 In this example, your word cloud image will be saved to `word-cloud.png`.
