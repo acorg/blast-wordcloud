@@ -1,6 +1,8 @@
 This is a Python program to display word clouds based on the titles that
 are matched by [BLAST](https://en.wikipedia.org/wiki/BLAST).
 
+![example.png]{example.png}
+
 ## Usage
 
 First, run `blast` and use `-outfmt 5` on the command line to get XML
