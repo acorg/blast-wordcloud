@@ -32,7 +32,7 @@ Firstly `pip install -r requirements.txt`.
 
 Then install Pygame [from here](http://www.pygame.org/download.shtml).
 
-## Installing pygame under Mac OS X
+## Installing under Mac OS X
 
 You'll need Python installed, which should already be the case. You might
 want to make a [virtualenv](https://pypi.python.org/pypi/virtualenv) for
@@ -41,8 +41,10 @@ which isn't recommended).
 
 Firstly, `pip install -r requirements.txt`.
 
-This is a bit awkward, and I haven't managed to make it work.  I have
-brew's X11 installed, and I did the following:
+### Installing pygame
+
+Unfortunaely this is quite awkward, and I haven't managed to make it work.
+I have brew's X11 installed, and I did the following:
 
 * Download and unpack the pygame 1.9.1 sources from
   [here](http://www.pygame.org/download.shtml)
@@ -67,7 +69,7 @@ brew's X11 installed, and I did the following:
 * Re-run `$ python setup install`. If all goes well you should then be able
   to cleanly run `$ python -c 'import pygame'`.
 
-### Problem under Python 2
+#### Problem under Python 2
 
 Although pygame can now be imported, it doesn't fully work. Under Python2 I
 get an error from `pygame.font.init()`:
@@ -101,7 +103,7 @@ happening on my machine.
 Unfortunately, `pytagcloud` makes heavy use of `pygame` (at least it
 imports many things).
 
-### Problem under Python 3
+#### Problem under Python 3
 
 Under Python 3.5 there is a different error:
 
