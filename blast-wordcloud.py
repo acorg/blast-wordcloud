@@ -9,22 +9,18 @@ to see usage & options, or read on.
 """
 
 import argparse
-
-import pytagcloud
-from pytagcloud import create_tag_image, make_tags
-from pytagcloud.lang.counter import get_tag_counts
+from collections import defaultdict
+from wordcloud import WordCloud
 
 from Bio.Blast import NCBIXML
 
-
-pytagcloud.lang = 'english'
 
 parser = argparse.ArgumentParser(
     description='Make a word cloud from BLAST XML output')
 
 parser.add_argument('--out', required=True, help='The name of the output file')
 
-parser.add_argument('--in', required=True, help='The BLAST XML input file.')
+parser.add_argument('--xml', required=True, help='The BLAST XML input file.')
 
 parser.add_argument(
     '--ncbiTitles', default=False, action='store_true',
@@ -36,15 +32,17 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-titles = []
+titles = defaultdict(int)
 
 with open(args.xml) as fp:
     for record in NCBIXML.parse(fp):
         for description in record.descriptions:
             title = description.title
             if args.ncbiTitles:
-                title = title[title.index(' '):title.index(',')]
-            titles.append(title)
+                print(title)
+                title = title[title.index(' '):title.find(',')]
+            titles[title] += 1
 
-tags = make_tags(get_tag_counts(' '.join(titles)), maxsize=80)
-create_tag_image(tags, args.out, size=(900, 600))
+wordCloud = WordCloud(width=900, height=600).generate_from_frequencies(
+    titles.items())
+wordCloud.to_file(args.out)
