@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+"""
+A python program to make a word cloud from BLAST XML output. Run
+
+    $ blast-wordcloud.py --help
+
+to see usage & options, or read on.
+"""
 
 import argparse
 
@@ -10,8 +16,11 @@ from pytagcloud.lang.counter import get_tag_counts
 
 from Bio.Blast import NCBIXML
 
+
+pytagcloud.lang = 'english'
+
 parser = argparse.ArgumentParser(
-    description='Make a wordcloud from BLAST XML output')
+    description='Make a word cloud from BLAST XML output')
 
 parser.add_argument('--out', required=True, help='The name of the output file')
 
@@ -36,9 +45,6 @@ with open(args.xml) as fp:
             if args.ncbiTitles:
                 title = title[title.index(' '):title.index(',')]
             titles.append(title)
-
-
-pytagcloud.lang = 'english'
 
 tags = make_tags(get_tag_counts(' '.join(titles)), maxsize=80)
 create_tag_image(tags, args.out, size=(900, 600))

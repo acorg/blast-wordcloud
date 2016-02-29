@@ -10,7 +10,7 @@ output. Let's suppose that's in a file called `blast-output.xml`. Then:
 $ blast-wordcloud.py --in blast-output.xml --out word-cloud.png
 ```
 
-In this example, your wordcloud image will be saved to `word-cloud.png`.
+In this example, your word cloud image will be saved to `word-cloud.png`.
 
 If the BLAST database you're matching against was downloaded from NCBI,
 you'll likely find the `--ncbiTitles` option useful. That will transform an
@@ -45,7 +45,7 @@ brew's X11 installed, and I did the following:
 * Download and unpack the pygame 1.9.1 sources from
   [here](http://www.pygame.org/download.shtml)
 
-* python setup.py install
+* `$ python setup.py install`
 
 * This fails on a compile (unable to find `X11/Xlib.h`). Edit the `Setup`
   file that was created by the failed install, and add `-I/opt/X11/include`
@@ -56,14 +56,14 @@ brew's X11 installed, and I did the following:
   [see here](http://stackoverflow.com/questions/11954497/error-when-installing-pygame-on-mountain-lion)
   for some details on that.
 
-* For Python 2.7 I had to run `sudo mkdir
-  ~/.virtualenvs/lm/include/python2.7/pygame` and `sudo chown terry
+* For Python 2.7 I had to run `$ sudo mkdir
+  ~/.virtualenvs/lm/include/python2.7/pygame` and `$ sudo chown terry
   ~/.virtualenvs/lm/include/python2.7/pygame`. That's because the Brew
   python 2.x links to the system python, so the above directory is actually
   in `/System/Library/Frameworks/Python.framework/Versions/2.7`.
 
-* Re-run `python setup install`. If all goes well you should then be able
-  to cleanly run `python -c 'import pygame'`.
+* Re-run `$ python setup install`. If all goes well you should then be able
+  to cleanly run `$ python -c 'import pygame'`.
 
 ### Problem under Python 2
 
