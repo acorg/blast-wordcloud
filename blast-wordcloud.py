@@ -39,7 +39,6 @@ with open(args.xml) as fp:
         for description in record.descriptions:
             title = description.title
             if args.ncbiTitles:
-                print(title)
                 title = title[title.index(' '):title.find(',')]
             titles[title] += 1
 
