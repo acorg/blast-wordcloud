@@ -59,7 +59,7 @@ brew's X11 installed, and I did the following:
   for some details on that.
 
 * For Python 2.7 I had to run `$ sudo mkdir
-  ~/.virtualenvs/lm/include/python2.7/pygame` and `$ sudo chown terry
+  ~/.virtualenvs/lm/include/python2.7/pygame` and `$ sudo chown $USER
   ~/.virtualenvs/lm/include/python2.7/pygame`. That's because the Brew
   python 2.x links to the system python, so the above directory is actually
   in `/System/Library/Frameworks/Python.framework/Versions/2.7`.
