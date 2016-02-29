@@ -1,0 +1,4 @@
+# You will likely need to install pygame manually.
+pytagcloud==0.3.5
+biopython==1.64
+simplejson
