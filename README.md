@@ -7,8 +7,6 @@ cloud PNG images from words in sequence titles matched by a
 
 ![example-2.png](example-2.png)
 
-![example-1.png](example-1.png)
-
 ## Usage
 
 First, run `blast` and use `-outfmt 5` on the command line to get XML
@@ -37,6 +35,8 @@ NCBI sequence title like "gi|361057412|gb|CP003178.1| Niastella koreensis,
 complete genome" into "Niastella koreensis". It uses a simple heuristic -
 only keep the text between the first space and the first comma in the
 title, but it is quite effective.
+
+![example-1.png](example-1.png)
 
 ## Installing under Linux and Mac OS X
 
