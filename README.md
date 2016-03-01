@@ -5,9 +5,9 @@ Is a Python program that uses the
 cloud PNG images from words in sequence titles matched by a
 [BLAST](https://en.wikipedia.org/wiki/BLAST) search.
 
-![example-2.png](example.png)
+![example-2.png](example-2.png)
 
-![example-1.png](example.png)
+![example-1.png](example-1.png)
 
 ## Usage
 
