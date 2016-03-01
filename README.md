@@ -5,7 +5,9 @@ Is a Python program that uses the
 cloud PNG images from words in sequence titles matched by a
 [BLAST](https://en.wikipedia.org/wiki/BLAST) search.
 
-![example.png](example.png)
+![example-2.png](example.png)
+
+![example-1.png](example.png)
 
 ## Usage
 
@@ -21,9 +23,9 @@ $ blast-wordcloud.py --xml blast-output.xml --out word-cloud.png
 
 In that example, your word cloud image will be saved to `word-cloud.png`.
 
-Run
+Use
 
-```
+```sh
 $ blast-wordcloud.py --help
 ```
 
