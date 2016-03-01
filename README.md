@@ -1,18 +1,33 @@
-This is a Python program to display word clouds based on the titles that
-are matched by [BLAST](https://en.wikipedia.org/wiki/BLAST).
+# blast-wordcloud
+
+Is a Python program that uses the
+[word_cloud](https://github.com/amueller/word_cloud) package to create word
+cloud PNG images from words in sequence titles matched by a
+[BLAST](https://en.wikipedia.org/wiki/BLAST) search.
 
 ![example.png](example.png)
 
 ## Usage
 
 First, run `blast` and use `-outfmt 5` on the command line to get XML
-output. Let's suppose that's in a file called `blast-output.xml`. Then:
+output. Let's suppose the resulting output is in a file called
+`blast-output.xml`.
+
+Then:
 
 ```sh
 $ blast-wordcloud.py --xml blast-output.xml --out word-cloud.png
 ```
 
-In this example, your word cloud image will be saved to `word-cloud.png`.
+In that example, your word cloud image will be saved to `word-cloud.png`.
+
+Run
+
+```
+$ blast-wordcloud.py --help
+```
+
+to see additional arguments.
 
 If the BLAST database you're matching against was downloaded from NCBI,
 you'll likely find the `--ncbiTitles` option useful. That will transform an
@@ -28,5 +43,8 @@ want to make a [virtualenv](https://pypi.python.org/pypi/virtualenv) for
 the installation (otherwise you'll need to run the following using `sudo`,
 which isn't recommended).
 
-Then do `pip install -r requirements.txt`.
+Then:
 
+```sh
+$ pip install -r requirements.txt
+```
